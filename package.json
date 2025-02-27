@@ -1,0 +1,17 @@
+{
+    "name": "findit",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "npm-run-all --parallel start:**",
+        "start:client": "cd client && npm run dev",
+        "start:server": "cd server && npm start",
+        "prettier": "prettier --check 'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'",
+        "format": "prettier --write  'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'"
+    },
+    "dependencies": {
+        "npm-run-all": "^4.1.5"
+    },
+    "devDependencies": {
+        "prettier": "^3.5.2"
+    }
+}

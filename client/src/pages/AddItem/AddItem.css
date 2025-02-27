@@ -1,0 +1,102 @@
+/* Add Item Container */
+.add-item-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    bottom: 30px;
+    background-color: #1e293b;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    height: 460px !important;
+  }
+  
+  /* Add Item Title */
+  .add-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    color: blanchedalmond;
+    background-color: #1e293b !important;
+    width: 100px;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin: 15px 0;
+    background-color: #1e293b !important;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: blanchedalmond;
+    background-color: #1e293b !important;
+  }
+  
+  /* Input Box */
+  .input-box {
+    width: 250px !important;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #1e293b;
+    color: gray;
+    height: 20px !important;
+    border: 1px solid blanchedalmond;
+  }
+  
+  /* Placeholder */
+  .input-box::placeholder {
+    color: gray;
+  }
+  
+  /* Button Container */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #1e293b !important;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f29c50;
+    color: #1e293b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    width: 100px;
+    text-align: center;
+  }
+  
+  /* Button Hover Effects */
+  .btn:hover {
+    background-color: #d87f3a;
+  }
+  
+  /* Save Button */
+  .save-btn {
+    background-color: #f29c50;
+    color: #1e293b;
+  }
+  
+  /* Cancel Button */
+  .cancel-btn {
+    background-color: #f29c50;
+    color: #1e293b;
+  }
+  

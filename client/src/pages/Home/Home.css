@@ -1,0 +1,139 @@
+
+.container {
+  width: 100%;
+height: 60px;
+position: relative;
+right:255px;
+top: 5px;
+background-color: #00495c;
+
+}
+/* Main Section */
+.Hero-section {
+display: flex;
+justify-content: flex-start; 
+position: relative;
+left: 40px;
+top: 20px;
+background-color: #00495c;
+}
+.Text-section{
+color: blanchedalmond;
+width: 570px;
+gap: 35px;
+position: relative;
+right: 190px;
+bottom: 140px;
+text-align: justify;
+}
+h2{
+font-size: 25px;
+color: blanchedalmond;
+position: relative;
+right: 10px;
+bottom: 100px;
+width: 500px;
+}
+.description,
+.thank-you p{
+gap: 25px;
+position: relative;
+right: 10px;
+bottom: 80px;
+font-size: 20px;
+color: #ffebcd;
+}
+
+.thank-you {
+  font-style: italic;
+position: relative;
+right: 10px;
+bottom: 80px;
+}
+.btn-img{
+    display: flex;
+  align-items: center;
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+  align-items: center;
+    position: relative;
+right: 25px;
+bottom: 60px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #f29c50;
+}
+
+.action-button {
+  font-size: 18px;
+  padding: 12px 20px;
+  margin: 10px;
+  background-color: #0086a8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #006b81;
+}
+
+/* Images Section */
+.images {
+  display: flex;
+align-items: center;
+  gap: 15px;
+ position: relative;
+left: 50px;
+right: 400px;
+bottom:380px;
+}
+
+.images img {
+  width: 200px;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 5px solid #ffdd57;
+   position: absolute;
+right: 500px;
+bottom:2500px;
+  
+}
+
+/* Images Section */
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 486px;
+  position: relative;
+}
+
+/* Image Positions */
+.image1 {
+  left: 285px;
+  top: 68px;
+}
+
+.image2 {
+  left: 151px;
+  top: 32px;
+}
+
+.image3 {
+  left: 0px;
+  top: 0px;
+}
