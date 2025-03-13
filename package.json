@@ -1,17 +1,30 @@
 {
-    "name": "findit",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "npm-run-all --parallel start:**",
-        "start:client": "cd client && npm run dev",
-        "start:server": "cd server && npm start",
-        "prettier": "prettier --check 'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'",
-        "format": "prettier --write  'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'"
-    },
-    "dependencies": {
-        "npm-run-all": "^4.1.5"
-    },
-    "devDependencies": {
-        "prettier": "^3.5.2"
-    }
+  "name": "findit",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm-run-all --parallel start:**",
+    "start:client": "cd client && npm run dev",
+    "start:server": "cd server && npm start",
+    "prettier": "prettier --check 'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write  'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
+    "cloudinary": "^1.41.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.8",
+    "mongoose": "^6.0.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^6.10.0",
+    "npm-run-all": "^4.1.5",
+    "react-bootstrap": "^2.10.9"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.2"
+  },
+  "type": "module"
 }

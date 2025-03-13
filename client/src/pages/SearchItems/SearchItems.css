@@ -1,0 +1,160 @@
+/* General styling for the page */
+.my-4 {
+  padding: 10px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  color: blanchedalmond;
+ display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start; /* Align grid items at the start */
+  justify-content: center; /* Center the grid horizontally */
+  position: relative; /* Relative positioning for flexbox/grid layout */
+  top: 100px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+height: 600px!important;
+}
+
+/* Heading Styling */
+h2, h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: blanchedalmond;
+}
+
+h2 {
+  position: relative;
+  top: 0;
+}
+
+h3 {
+  background-color: transparent;
+  position: relative;
+  top: 0;
+}
+
+/* Search Bar */
+.form-control {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
+  border: 2px solid #dc3545;
+  transition: all 0.3s ease;
+  height: fit-content;
+  color: blanchedalmond;
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px; /* Space between grid items */
+  
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  outline: none;
+    gap: 50px; /* Space between grid items */
+
+}
+
+/* Card Styling */
+.card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+    display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+/* Card Hover Effects */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 1.5rem;
+  background-color: transparent;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.card-footer {
+  background: transparent;
+  border-top: none;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+/* Button Styling */
+.card button {
+  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  transition: all 0.3s ease;
+}
+
+.card .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+  filter: brightness(90%);
+  transform: scale(1.05);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .my-4 {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+
+  .card {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .my-4 {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+
+  .form-control {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+}

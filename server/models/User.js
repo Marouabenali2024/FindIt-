@@ -1,25 +1,14 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true, // Make sure password is required
-  },
-  /* img: {
-    type: String,
-    default: 'https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png',
-  }, */
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-  },
+  fullName: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  address: { type: String, required: true },
+  phone: { type: String, required: true },
 });
 
+// Exclude confirmPassword from the schema as it should not be stored in the database
 const User = mongoose.model('User', userSchema);
 
 export default User;

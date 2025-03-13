@@ -1,35 +1,55 @@
 import React from 'react';
+import logo from '../../assets/FindIt-6.PNG';
 import './Footer.css';
 
 function Footer() {
   return (
-    <div className="footer">
-      {/* Footer */}
-      <footer className="footer">
-        <img className="logo" alt="FindIt" />
-        <div className="footer-links">
-          <div className="footer-section">
-            <h3>Site</h3>
-            <a href="#">Lost</a>
-            <a href="#">Report Lost</a>
-            <a href="#">Found</a>
-            <a href="#">Report Found</a>
-          </div>
-          <div className="footer-section">
-            <h3>Help</h3>
-            <a href="#">Customer Support</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-          <div className="footer-section">
-            <h3>Links</h3>
-            <a href="#">LinkedIn</a>
-            <a href="#">Facebook</a>
-            <a href="#">YouTube</a>
-            <a href="#">About Us</a>
-          </div>
+    <div className="footer-container">
+      <footer className="Footer">
+        {/* Logo */}
+        <div className="footer-logo">
+          <img
+            src={logo}
+            alt="logo"
+            className="hero-image"
+            style={{ width: '150px', height: 'auto' }}
+            onClick={() => console.log('Image clicked')}
+          />
+        </div>
+
+        {/* Social Media Links */}
+        <div className="footer-nav">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Instagram
+          </a>
         </div>
       </footer>
+
+      {/* Copyright Line */}
+      <div className="footer-copyright">
+        <p className="footer-text">&copy; 2024 FindIt. All rights reserved.</p>
+      </div>
     </div>
   );
 }

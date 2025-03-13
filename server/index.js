@@ -1,13 +1,16 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { connectDB } from './config/db.js';
+import { connect } from './connect.js';
 import colors from 'colors';
-import authRoutes from './routes/authRoutes.js';
-import itemRoutes from './routes/itemRoutes.js';
+import UserRoutes from './routes/user/index.js';
+import AdminRoutes from './routes/admin/index.js';
 import cors from 'cors';
 
 // Load env vars
-dotenv.config();
+dotenv.config(); 
+// Log MONGO_URI to check if it's loaded correctly
+console.log('MongoDB URI:', process.env.MONGO_URI);
 
 // Initialize express
 const app = express();
@@ -16,14 +19,14 @@ const port = process.env.PORT || 5000;
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 // Connect to MongoDB
-connectDB();
+connect();
 
 // Add this middleware before your routes
 app.use(express.json());
 
-// routes
-app.use('/auth', authRoutes);
-app.use('/items', itemRoutes);
+// Routes
+app.use('/api/user', UserRoutes);
+app.use('/api/admin', AdminRoutes);
 
 // Start server
 app.listen(port, () => {

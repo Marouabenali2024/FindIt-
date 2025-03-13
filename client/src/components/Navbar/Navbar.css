@@ -3,138 +3,73 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 16px;
   background-color: #0086a8;
   color: blanchedalmond;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 1590px;
-  height: 80px;
-  margin: 0;
+  width: 100%;
+  height: 67px;
   position: fixed;
-  left: 0px;
-  bottom: 625px;
-  gap: 10px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 /* Logo */
 .logo {
-  width: 100px;
-  height: auto;
+  width: 131px;
+  height: 28px;
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  left: 50px;
-  top: 0px;
-  background-color: #0086a8;
-  color: #ffebcd;
-    font-size: 20px;
-
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #F2F2F2;
 }
 
 /* Navigation container */
 .nav {
   display: flex;
   align-items: center;
-  gap: 25px;
-  background-color: #0086a8;
-  position: relative;
-  right: 40px;
-  top: 0px;
-  color: blanchedalmond;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-/* Navigation links */
-.nav-link {
-all: unset;
-  text-decoration: none; /* Removes underline */
+/* Navigation items */
+.nav-item {
+  height: 36px;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   color: blanchedalmond;
   font-size: 20px;
-  transition: color 0.3s ease-in-out;
-  background-color: #0086a8;
-  padding: 10px 15px;
-  display: inline-block; /* Ensures consistent spacing */
-  border: none; /* Removes any default border */
-  cursor: pointer;
-
-
-}
-
-/* Hover Effect */
-.nav-link:hover {
-  color: #0086a8;
-}
-.nav-link:active {
-  color: #ffdd57;
-}
-/* Navbar buttons */
-.nav-item {
-  background-color: transparent;
-  color: white;
-  padding: 8px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-  border: none; /* Removes any default border */
-  text-decoration: none; /* Ensures no underline */
-}
-
-.nav-item:hover {
-  background-color: white;
-  color: #ffdd57;
-}
-.nav-item:active {
-  background-color: white;
-  color: #ffdd57;
-}
-
-
-/* General Button Styling */
-.login,
-.register {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 20px;
-  border: 2px solid;
-  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-align: center;
-  outline: none;
 }
 
-/* Login Button */
-.login {
-  color: #ffebcd;
-  background-color: transparent;
-}
-
-.login:hover {
+.nav-item:hover {
   background-color: #05EDED;
   color: #003B4A;
 }
 
-.login:active {
+.nav-item:active {
   background-color: #ffdd57;
   color: #003B4A;
   transform: scale(0.98); /* Subtle press effect */
 }
 
-/* Register Button */
-.register {
-  background-color: transparent;
-  color: #ffebcd;
-}
-
-.register:hover {
-  background-color: #05EDED;
-  color: #003B4A;
-}
-
-.register:active {
-  background-color: #ffdd57;
-  color: #003B4A;
-  transform: scale(0.98); /* Subtle press effect */
+/* Special button items (Login, Signin) */
+.nav-item.special {
+  border: 3px solid #0086A8;
 }
 
 /* Responsive design */

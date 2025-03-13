@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import "./AddItem.css"; // Import the CSS file
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap'; // Importing React Bootstrap components
+import './AddItem.css'; // Import the CSS file
 
 const AddItem = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    description: "",
-    price: "",
+    name: '',
+    description: '',
+    location: '', // Added location to formData
   });
 
   const handleChange = (e) => {
@@ -14,47 +15,56 @@ const AddItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Item Added:", formData);
+    console.log('Item Added:', formData);
     // Handle form submission (e.g., API call)
   };
 
   return (
     <div className="add-item-container">
       <h2>Add Item</h2>
-      <form onSubmit={handleSubmit} className="add-item-form">
-        <label>
-          Name:
-          <input
+      <Form onSubmit={handleSubmit} className="add-item-form">
+        <Form.Group controlId="formName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
+            placeholder="Enter item name"
           />
-        </label>
+        </Form.Group>
 
-        <label>
-          Description:
-          <textarea
+        <Form.Group controlId="formDescription">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
+            placeholder="Enter item description"
           />
-        </label>
+        </Form.Group>
 
-        <label>
-          Location:
-          <textarea
+        <Form.Group controlId="formLocation">
+          <Form.Label>Location</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
             name="location"
             value={formData.location}
             onChange={handleChange}
             required
+            placeholder="Enter item location"
           />
-        </label>
+        </Form.Group>
 
-        <button type="submit">Add Item</button>
-      </form>
+        <Button variant="primary" type="submit">
+          Add Item
+        </Button>
+      </Form>
     </div>
   );
 };
