@@ -19,6 +19,10 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    isAdmin: {
+      type: Boolean,
+      default: true, // Admin users are true
+    },
     isMainAdmin: {
       type: Boolean,
       default: false,

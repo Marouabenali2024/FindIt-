@@ -1,13 +1,13 @@
 import nodemailer from 'nodemailer';
-import fs from 'fs/promises'; // Use promises-based API for async file reading
-import path, { dirname } from 'path';
+import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import User from '../models/User.js'; // Ensure correct import for your User model
 
 dotenv.config(); // Load environment variables
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 // Email validation function
 const isValidEmail = (email) => {
@@ -15,84 +15,84 @@ const isValidEmail = (email) => {
   return re.test(email);
 };
 
-const VerifyUserEmail = async (fullName, userEmail, userType = 'user') => {
+const VerifyUserEmail = async (fullName, userEmail, id, userType = 'user') => {
   console.log('📧 Sending verification email to:', userEmail);
   console.log('📛 Full Name:', fullName);
   console.log('🧑‍💼 User Type:', userType);
 
   try {
-    // Log sensitive info with caution
-    console.log('📨 EMAIL_USER:', process.env.EMAIL_USER);
-    if (process.env.EMAIL_PASS) {
-      console.warn('🔑 EMAIL_PASS: *****'); // Don't log the actual password in production
-    } else {
-      console.error('❌ EMAIL_PASS not set!');
+    // Ensure environment variables exist
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error(
+        '❌ Missing EMAIL_USER or EMAIL_PASS in environment variables.'
+      );
+      return null; // Avoid throwing errors that crash the app
     }
 
-    // Create a transport for the email sending
+    // Validate email format
+    if (!isValidEmail(userEmail)) {
+      console.error('❌ Invalid email address provided!');
+      return null;
+    }
+
+    // Check if user exists in the database
+    const user = await User.findById(id);
+    if (!user) {
+      console.log('❌ User not found in the database');
+      return null; // Return null instead of throwing
+    }
+
+    // Create a transporter for sending emails
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
-      secure: true, // TLS
+      secure: true, // Use TLS
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
       tls: {
-        rejectUnauthorized: false,
+        rejectUnauthorized: false, // Allow self-signed certificates
       },
     });
 
-    const filePath = path.join(__dirname, '..', 'content', 'about.html');
-    const docPath = path.join(__dirname, '..', 'assets', 'doc.pdf');
+    // Generate verification URL
+    const baseUrl = process.env.BASE_URL || 'http://localhost:3000'; // Use environment variable
+    const verificationUrl = `${baseUrl}/api/user/verifyAccount/${id}`;
 
-    // Check if the required files exist
-    try {
-      await fs.access(filePath); // Check if about.html exists
-      await fs.access(docPath); // Check if doc.pdf exists
-    } catch (err) {
-      throw new Error(`❌ File(s) not found: ${err.message}`);
-    }
-
-    // Read email content (HTML) and PDF attachment
-    const emailContent = await fs.readFile(filePath, 'utf-8'); // Asynchronously read HTML file
-    const docContent = await fs.readFile(docPath); // Asynchronously read binary content for PDF
-
-    // Define email subject and text based on user type
+    // Define email subject and body
     const subject =
       userType === 'admin'
         ? 'Admin Account Verification'
         : 'Account Verification';
-    const text =
-      userType === 'admin'
-        ? `Hello ${fullName},\n\nWelcome to FindIt! Your admin account has been created successfully. Please verify your admin account.`
-        : `Hello ${fullName},\n\nWelcome to FindIt! Please verify your account.`;
 
-    // Prepare email options
+    const htmlContent = `
+      <p>Hello <strong>${fullName}</strong>,</p>
+      <p>Welcome to <strong>FindIt</strong>! ${
+        userType === 'user' ? 'Your account has been created successfully.' : ''
+      }</p>
+      <p>Please click the link below to verify your account:</p>
+      <p><a href="${verificationUrl}" style="color: blue; font-weight: bold;">Verify Your Account</a></p>
+      <p>If you did not sign up for FindIt, please ignore this email.</p>
+      <p>Best regards,<br>FindIt Team</p>
+    `;
+
+    // Email options
     const mailOptions = {
       from: `FindIt <${process.env.EMAIL_USER}>`,
       to: userEmail,
-      subject: subject,
-      text: text,
-      html: emailContent,
-      attachments: [
-        {
-          filename: 'doc.pdf',
-          content: docContent,
-          contentType: 'application/pdf',
-        },
-      ],
+      subject,
+      html: htmlContent, // Use HTML for better formatting
     };
 
-    // Send the email
+    // Send email
     const info = await transporter.sendMail(mailOptions);
     console.log(`✅ Email sent successfully! Message ID: ${info.messageId}`);
     return info;
   } catch (error) {
     console.error('❌ Error sending email:', error);
-    throw error; // Rethrow error for proper handling
+    return null; // Avoid throwing errors that crash the app
   }
 };
-
 
 export default VerifyUserEmail;

@@ -29,18 +29,27 @@ function NavBar() {
       />
 
       <nav className="nav">
-        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
 
         {loggedIn ? (
           <>
-            <Link to="/addItem" className="nav-link">Add Item</Link>
-            <Link to="/search-items" className="nav-link">Search Items</Link>
-            <button onClick={handleLogout} className="nav-item login">Logout</button>
+            <Link to="/ItemsList" className="nav-link">
+              Items List
+            </Link>
+            <button onClick={handleLogout} className="nav-item logout-btn">
+              Logout
+            </button>
           </>
         ) : (
           <>
-            <Link to="/login" className="nav-item login">Login</Link>
-            <Link to="/register" className="nav-item register">Register</Link>
+            <Link to="/login" className="nav-itemLogin-btn">
+              Login
+            </Link>
+            <Link to="/register" className="nav-item register-btn">
+              Register
+            </Link>
           </>
         )}
       </nav>

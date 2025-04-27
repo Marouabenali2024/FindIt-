@@ -34,43 +34,115 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-}
 
+}
+.nav-link{
+    color: blanchedalmond!important;
+
+}
+.nav-link:hover{
+    color: #ffdd57!important;
+
+}
+.nav-link:active{
+    color: #ffdd57!important;
+
+}
 /* Navigation items */
+/* Styling the links and buttons for both login and register */
 .nav-item {
-  height: 36px;
-  padding: 8px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: blanchedalmond;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  line-height: 20px;
-  word-wrap: break-word;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  text-align: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .nav-item:hover {
-  background-color: #05EDED;
-  color: #003B4A;
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
-.nav-item:active {
-  background-color: #ffdd57;
-  color: #003B4A;
-  transform: scale(0.98); /* Subtle press effect */
+.nav-link {
+  color: #007bff;
 }
 
-/* Special button items (Login, Signin) */
-.nav-item.special {
-  border: 3px solid #0086A8;
+.nav-link:hover {
+  color: #0056b3;
 }
+
+/* More specific class for login button */
+.nav-itemLogin-btn {
+  background-color: #1e293b !important;
+  color: #ffdd57 !important;
+  width: 80px !important;
+  height: 40px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: lowercase; /* Make the text lowercase */
+  transition: all 0.3s ease;
+}
+
+.nav-item.login-btn:first-letter {
+  text-transform: uppercase; /* Make the first letter uppercase */
+}
+
+
+.nav-item.login-btn:hover {
+  background-color: #2d3e56 !important; /* Darker shade on hover */
+  transform: scale(1.05);
+}
+
+.nav-item {
+  text-decoration: none;
+}
+
+.nav-item.login-btn {
+  text-align: center;
+  border-radius: 5px;
+}
+
+.nav-item.register-btn {
+ background-color: #1e293b !important;
+  color: #ffdd57 !important;
+  width: 80px !important;
+  height: 40px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+    text-transform: lowercase; /* Make the text lowercase */
+  transition: all 0.3s ease;
+}
+.nav-item.register-btn:first-letter {
+  text-transform: uppercase; /* Make the first letter uppercase */
+}
+
+.nav-item.logout-btn {
+  background-color: #1e293b !important;
+  color: #ffdd57 !important;
+  width: 80px !important;
+  height: 40px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: lowercase; /* Make the text lowercase */
+  transition: all 0.3s ease;
+}
+.nav-item.logout-btn:first-letter {
+  text-transform: uppercase; /* Make the first letter uppercase */
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {

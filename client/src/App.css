@@ -1,15 +1,19 @@
-*{
+* {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 0!important;
 }
 
+/* Body Styling */
 body {
-  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-background-color: #00495c;
+  background-color: #00495c;
+  min-height: 200vh; 
+  height: 100%!important;
+  /* border: 10px solid green; */
+  position: relative;
+  top: 60px;
 }

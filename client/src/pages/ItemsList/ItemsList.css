@@ -1,0 +1,1825 @@
+
+
+/* List group items */
+.list-group-item {
+  border: none;
+  border-left: 4px solid #4299e1;
+  margin-bottom: 0.75rem;
+  border-radius: 0 8px 8px 0;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item:hover {
+  background-color: #edf2f7;
+  transform: translateX(4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .floating-search-container,
+  .floating-filter-container {
+    max-width: 100%;
+  }
+  
+  .filter-bar {
+    padding: 1rem;
+  }
+}
+/* Form controls */
+.form-control {
+  border-radius: 8px;
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+  border-color: #3498db;
+}
+
+/* Dropdowns */
+.dropdown-menu {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f4f8;
+}
+
+/* Empty state styling */
+.text-center.py-5 {
+  background-color: red;
+  border-radius: 12px;
+  padding: 3rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .filter-bar {
+    padding: 1rem !important;
+  }
+  
+  .AddItembtn {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+.comment-item {
+  margin-bottom: 20px;
+}
+
+.comment-item .fw-bold {
+  font-size: 16px;
+  color: #333;
+}
+
+.comment-item .text-muted {
+  font-size: 14px;
+}
+
+.comment-item .text-muted small {
+  font-size: 12px;
+}
+
+.comment-item .btn {
+  margin-left: 10px;
+}
+/* Login Modal */
+/* Modal Style */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 1.5rem;
+}
+
+/* Modal Header */
+.modal-header {
+  border-bottom: 2px solid #f1f1f1;
+  background-color: #f8f9fa;
+  padding: 1rem 1.5rem;
+  color: #333;
+}
+
+.modal-header .modal-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 1.5rem 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Form Labels */
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Form Inputs */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focused Inputs */
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styles */
+button {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+
+/* Login Button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Alert Styles */
+.alert {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+  font-weight: 600;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+/* Modal Close Button */
+.modal-header .close {
+  color: #007bff;
+  font-size: 1.5rem;
+}
+
+.modal-header .close:hover {
+  color: #0056b3;
+}
+
+/* Form Spacing */
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+/* Modal Responsive Design */
+@media (max-width: 767px) {
+  .modal-content {
+    border-radius: 0;
+  }
+
+  .modal-header {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .form-label {
+    text-align: left;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+/* Add Item Modal */
+.AddItemModal .modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  background-color: #1e293b !important;
+  height: 650px;
+}
+
+.AddItemModal__Header {
+  border-bottom: 2px solid #e6e6e6;
+  background-color: #f8f9fa;
+  padding: 1rem 1.5rem;
+}
+
+.AddItemModal__Title {
+  font-size: 1.5rem;
+  color: blanchedalmond!important;
+  font-weight: bold;
+  position: relative;
+  left:   150px;
+}
+
+.AddItemModal__Body {
+  padding: 1.5rem;
+  background-color: #1e293b !important;
+}
+
+.AddItemModal__Label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: blanchedalmond;
+  display: block;
+  margin: 0.5rem 0 0.5rem 20px;
+}
+
+.AddItemModal__Input,
+.AddItemModal__FileInput {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-left: 20px;
+  width: 430px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.AddItemModal .btn-close {
+  color: blanchedalmond !important;
+  filter: invert(100%); /* if you want to reverse its color when it's SVG-based */
+  position: relative;
+  right: 20px;
+}
+
+.AddItemModal .btn-close:hover {
+  color: #007bff !important;
+}
+
+.AddItemModal__Input:focus,
+.AddItemModal__FileInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+.AddItemModal__RadioGroup {
+  margin-left: 20px;
+}
+
+.AddItemModal__Radio {
+  margin-right: 1rem;
+  color: red !important;
+    position: relative;
+  left:30px;
+}
+
+.AddItemModal .form-check-label {
+  font-size: 1rem;
+  color: blanchedalmond;
+  margin-left: 0.5rem;
+    position: relative;
+  right:10px;
+}
+
+.AddItemModal__Button {
+  background-color: #007bff;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: none;
+  width: 30% !important;
+  margin: 1.5rem auto 0 auto;
+  display: block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.AddItemModal__Button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.AddItemModal__Button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+
+.AddItemModal__Alert {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.AddItemModal .alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.AddItemModal .alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.AddItemModal__FormGroup {
+  margin-bottom: 1.5rem;
+  
+}
+
+.AddItemModal .CloseBtn {
+  background-color: #1e293b !important;
+  color: blanchedalmond !important;
+}
+
+/* Responsive Fixes */
+@media (max-width: 767px) {
+  .AddItemModal .modal-content {
+    border-radius: 0;
+    padding: 1rem;
+  }
+  .AddItemModal__Input,
+  .AddItemModal__FileInput {
+    width: 100%;
+    margin-left: 0;
+  }
+  .AddItemModal__Button {
+    width: 100% !important;
+  }
+}
+.AddItembtn {
+  background: linear-gradient(145deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: white;
+  box-shadow: 
+    0 0 15px rgba(0, 198, 255, 0.6),
+    0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  top: 90px;
+  right: 50px;
+  z-index: 1000;
+  cursor: pointer;
+  animation: pulse 2s infinite alternate;
+    border: 5px red solid!important;
+
+}
+
+.AddItembtn:hover {
+  transform: scale(1.15) rotate(180deg);
+  box-shadow: 
+    0 0 25px rgba(0, 198, 255, 0.8),
+    0 12px 35px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #0072ff, #00c6ff);
+}
+
+.AddItembtn:active {
+  transform: scale(0.9);
+  box-shadow: 
+    0 0 10px rgba(0, 198, 255, 0.8),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+
+/* Edit Item Modal */
+
+/* Modal Container */
+.custom-edit-modal .modal-content {
+  /* border: 10px solid darkblue; */
+  border-radius: 8px;
+  background-color: #1e293b !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+      height: 640px!important;
+
+}
+
+/* Header Section */
+.custom-close-section {
+  /* border: 10px solid orange; */
+  background-color: #1e293b !important;
+  padding: 20px 30px;
+    height: 60px;
+
+}
+
+/* Modal Title */
+.custom-modal-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: blanchedalmond !important;
+  /* border: 1px solid darkgreen; */
+  position: relative;
+  left: 200px;
+}
+
+/* Custom Close Button */
+.custom-close-section .custom-close-btn {
+  /* border: 2px solid #f44336 !important;  */
+  background: transparent !important;
+  background-color: transparent !important; /* Soft yellow background color */
+  outline: none; /* Removed outline to avoid unexpected borders */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: blanchedalmond !important;
+  font-size: 1.5rem; /* Adjusted for better icon size */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensures the close icon is centered */
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 20px; /* Adjusted to align properly on the right */
+  top: 10px; /* Vertically aligned */
+  cursor: pointer; /* Added pointer cursor for usability */
+}
+
+/* Close Button Hover Effect */
+.custom-close-section .custom-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  transform: rotate(90deg); /* Added rotation for interactive feel */
+  color: #1976d2 !important; /* Change text color to blue on hover */
+  border-color: #1976d2; /* Changed border color on hover to blue */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Added shadow for emphasis */
+}
+
+
+/* Body Section */
+.custom-modal-body {
+  /* border: 10px solid seagreen; */
+  background-color: #1e293b !important;
+  padding: 20px 30px;
+}
+
+/* Alert Box */
+.custom-alert {
+  border: 10px solid crimson;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+}
+
+/* Form Groups */
+.custom-form-group {
+  /* border: 10px solid violet; */
+  margin-bottom: 20px;
+  
+}
+
+/* Labels */
+.custom-label {
+  /* border: 10px solid skyblue; */
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: blanchedalmond;
+  position: relative;
+  width: 450px;
+  left: 20px;
+}
+
+/* Input Fields */
+.custom-input,
+.custom-textarea {
+  /* border: 10px solid coral; */
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 450px;
+  position: relative;
+  left: 20px; 
+   font-size: 0.95rem;
+  transition: border 0.2s ease;
+}
+
+.custom-input:focus,
+.custom-textarea:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+/* Checkbox */
+.custom-checkbox {
+  margin-right: 15px;
+  font-weight: 500;
+  accent-color: #28a745;
+  /* border: 5px solid gold; */
+    width: 400px;
+  position: relative;
+  left: 40px; 
+}
+
+/* Button Group */
+.custom-button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+    /* border: 5px solid yellowgreen; */
+  width: 450px;
+  position: relative;
+  left: 30px; 
+}
+
+/* Cancel Button */
+.custom-cancel-button {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  border-color: blanchedalmond;
+  color: blanchedalmond;
+  transition: all 0.2s ease;
+  position: relative;
+  right: 10px;
+  width: 80px;
+}
+
+.custom-cancel-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Submit Button */
+.custom-submit-button {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  width: 100px;
+  position: relative;
+  right: 0px; 
+}
+
+.custom-submit-button:disabled {
+  background-color: blanchedalmond !important;
+  border-color: blanchedalmond !important;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.custom-footer {
+  /* border: 10px solid mediumslateblue; */
+  padding: 15px 30px;
+  width: 450px;
+  position: relative;
+  bottom: 10px;
+  left: 30px; 
+        height: 60px;
+
+}
+
+
+
+/* Update Photo Modal */
+/* Update Photo Button */
+.photo-update-header .btn-close {
+  border: 2px solid blanchedalmond;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: transparent;
+  position: relative;
+  right: 30px;
+  top: 0px!important;
+  background-image: none !important;  /* disable Bootstrap's default SVG */
+  color: blanchedalmond !important;    /* apply color for text */
+  font-size: 24px;                    /* increase size for the "X" */
+}
+
+.photo-update-header .btn-close::after {
+  content: '×';    /* use a real text X */
+  color: blanchedalmond;
+  font-size: 24px;
+  position: relative;
+  bottom: 7px;
+  left: 0px;
+}
+
+
+.custom-photo-button {
+  border: 20px solid #ffa500; /* Orange */
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  width: 100px;
+  position: relative;
+  left: 5px;
+  top: 10px;
+}
+
+.custom-photo-button:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+.photo-update-modal .modal-content {
+  /* border: 10px solid #28a745; */
+  border-radius: 10px;
+    background-color: #1e293b !important;
+    height: 300px;
+
+}
+
+.photo-update-header {
+  /* border: 10px solid #007bff;  */
+  background-color: #1e293b !important;
+  height: 70px;
+}
+
+.photo-update-title {
+  /* border: 10px solid #ffc107;  */
+  color: blanchedalmond!important;
+  font-weight: bold;
+  position: relative;
+  left: 130px;
+}
+
+.photo-update-body {
+  /* border: 10px solid red; */
+  padding: 20px;
+    background-color: #1e293b !important;
+height: 100px!important;
+}
+
+.photo-update-alert {
+  /* border: 2px solid #dc3545; Red */
+  margin-bottom: 15px;
+}
+
+.photo-update-form-group {
+  /* border: 10px solid #17a2b8;  */
+  margin-bottom: 20px;
+  height: 160px;
+}
+
+.photo-update-label {
+  /* border: 10px dotted #6610f2;  */
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: blanchedalmond;
+  position: relative;
+  left: 30px;
+    top: 20px;
+
+}
+
+.photo-update-input {
+  /* border: 10px solid green;  */
+  position: relative;
+  left: 30px;
+    top: 30px;
+  width: 400px;
+}
+
+.photo-update-actions {
+  /* border: 10px dashed yellowgreen; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+    position: relative;
+  left: 30px;
+  bottom: 30px;
+  width: 400px;
+}
+
+.photo-update-cancel {
+  border: 1px solid blanchedalmond; /* Gray */
+  background-color: transparent;
+  color: blanchedalmond;
+}
+
+.photo-update-cancel:hover {
+  background-color: #0072ff
+}
+
+.photo-update-submit {
+  border: 1px solid blanchedalmond;
+  background-color: transparent!important;
+}
+.photo-update-submit:hover {
+  border: 2px solid blanchedalmond; 
+  cursor: pointer;
+    background-color: #0072ff!important;
+
+}
+
+/* Comments Modal */
+/* General Modal Styling */
+.modal {
+  border-radius: 10px;
+  /* border: 10px solid red; */
+  width: 550px;
+  height: 550px;
+  position: fixed;  /* Use fixed positioning for absolute control over placement */
+  top: 50%;         /* Position at the center of the viewport */
+  left: 50%;        /* Position at the center of the viewport */
+  transform: translate(-50%, -50%);  /* Center the modal exactly */
+  z-index: 1050;    /* Ensure it sits above other content */
+}
+
+/* Modal Header Styling */
+.modal-header {
+  background-color: #1e293b !important;
+  color: #fff;
+  border-bottom: 2px solid blanchedalmond;
+  height: 50px;
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: blanchedalmond!important;
+  position: relative;
+  left: 190px;
+}
+
+/* Modal Body */
+.modal-body {
+
+  padding: 20px;
+  background-color: #1e293b !important;
+  /* border-radius: 8px; */
+  /* border: 10px solid gold; */
+  width: 500px;
+}
+
+/* Bold Text */
+.fw-bold {
+  font-weight: bold;
+  color: blanchedalmond; 
+
+
+}
+
+/* Muted Text */
+.text-muted {
+  color: blanchedalmond!important;  /* Gray */
+  /* border: 10px solid greenyellow; */
+  background-color: #1e293b !important;}
+
+/* Flex Layout */
+.d-flex {
+  display: flex;
+  border: 1px dashed blanchedalmond!important;
+  background-color: transparent !important;
+  color: #1e293b  !important;
+  width: 300px!important;
+  position: relative;
+  left: 0px;
+  border-radius: 5px;
+}
+
+/* Justify Content Between */
+.justify-content-between {
+  justify-content: space-between;
+  /* border: 5px aquamarine solid; */
+}
+
+/* Align Items Start */
+.align-items-start {
+  align-items: flex-start;
+  border: 1px blanchedalmond solid;
+}
+
+/* Margin Bottom */
+.mb-3 {
+  margin-bottom: 1rem;
+  color: blanchedalmond;
+  /* border: 10px yellowgreen solid; */
+    width: 460px;
+  position: relative;
+  left: 20px;
+    gap: 10px;
+
+}
+
+/* Form Control */
+.form-control {
+  border: 5px solid transparent;  /* Green border */
+  border-radius: 5px!;
+  padding: 10px;
+    width: 440px;
+  position: relative;
+  left: 0px;
+}
+
+/* Delete Button (Trash) */
+.btn-outline-danger {
+  /* border-color: #dc3545;  */
+  color: blanchedalmond;
+  transition: all 0.3s ease;
+  border: 1px transparent solid!important;
+  position: relative;
+  right: 10px;
+  top: 5px;
+}
+
+.btn-outline-danger:hover {
+  /* background-color: #dc3545; */
+  color: white;
+}
+
+/* Full Width Button */
+.w-100 {
+  width: 100%;
+}
+
+/* No Comments Message */
+.text-muted {
+  font-size: 1rem;
+  color: #6c757d;
+}
+.AddComment{
+  /* border: 10px blueviolet solid; */
+  color: blanchedalmond;
+}
+.btn-close {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #1e293b;  /* Custom background color */
+  /* border: 2px solid blanchedalmond;    Custom border */
+  color: blanchedalmond!important;
+  border-radius: 50%;         /* Make it circular */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-close::before {
+  content: '×';              /* Cross symbol */
+  font-size: 1.2rem;
+  color: blanchedalmond;              /* Text color inside button */
+}
+
+.btn-close:hover {
+  background-color: #1e293b;  /* Change background on hover */
+  /* border-color: blanchedalmond; */
+  color: blanchedalmond;
+  opacity: 0.8;
+}
+:root {
+  --btn-padding: 0.375rem 0.75rem;
+  --btn-radius: 0.375rem;
+  --btn-font-size: 1rem;
+  --btn-transition: all 0.15s ease-in-out;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  padding: var(--btn-padding);
+  font-size: var(--btn-font-size);
+  border-radius: var(--btn-radius);
+  transition: var(--btn-transition);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn:disabled {
+  background-color: #c6c6c6;
+  border-color: #c6c6c6;
+  pointer-events: none;
+}
+
+.btn-info {
+  background-color: green;
+  border-color: green;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-info:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(120deg, #0f172a, #1e293b);
+  position: relative;
+  left: 70px;
+  top: 0;
+  width: 95%;
+  height: auto; 
+  border-radius: 0 12px 12px 0;
+  padding: 1.75rem 2.5rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 0% 100%);
+}
+
+/* Digital Circuit Pattern Overlay */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Hover Effect for Page Header */
+.page-header:hover {
+  transform: translateX(3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+/* Neon Accent Line */
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #3b82f6; /* Blue accent */
+  box-shadow: 
+    0 0 10px 1px #3b82f6,
+    0 0 20px 2px rgba(59, 130, 246, 0.5);
+  animation: neonPulse 4s infinite alternate;
+}
+
+/* Header Title */
+.header-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: blanchedalmond !important;
+  position: relative;
+  top: 10px;
+  z-index: 3;
+  letter-spacing: 1px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Rajdhani', 'Roboto', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Digital Brackets */
+.header-title::before,
+.header-title::after {
+  content: '';
+  position: absolute;
+  background: #3b82f6;
+  opacity: 0.8;
+}
+
+.header-title::before {
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 70%;
+}
+
+.header-title::after {
+  left: 8px;
+  top: 50%;
+  width: 12px;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+/* Holographic Highlight Effect */
+.header-title span {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.header-title span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: holographicSweep 3s infinite;
+}
+
+/* Add Item Button - Sci-fi Style */
+.AddItembtn {
+  background: linear-gradient(135deg, #2A3649, #0086A8);
+  border: 2px solid rgba(196, 181, 253, 0.7) !important;
+  /* color: blanchedalmond !important; */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(99, 102, 241, 0.5);
+  position: absolute;
+  top: 80px!important;
+  right: 50px;
+  z-index: 100;
+  font-size: 1.25rem;
+  overflow: hidden;
+}
+
+.AddItembtn:hover {
+  background: linear-gradient(135deg, #2C5883, #96C1F4);
+  border-color: rgba(16, 185, 129, 0.8) !important;
+  transform: rotate(225deg) scale(1.15);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3), 0 0 15px 5px rgba(16, 185, 129, 0.3);
+}
+
+/* Button Ripple Effect */
+.AddItembtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  z-index: -1;
+}
+
+.AddItembtn:hover::before {
+  width: 200%;
+  height: 200%;
+}
+
+.AddItembtn:active {
+  transform: rotate(225deg) scale(0.95);
+}
+
+/* Icon Rotation */
+.AddItembtn svg {
+  transition: transform 0.5s ease;
+}
+
+.AddItembtn:hover svg {
+  transform: rotate(90deg);
+}
+
+/* Filter Bar Inside Page Header */
+/* Filter Bar Container */
+.filter-bar {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  /* border: 2px blanchedalmond solid; */
+  position: relative;
+  top: 20px;
+}
+
+/* Row Layout */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+    /* border: 2px red solid; */
+    position: relative;
+    top: 10px;
+}
+
+/* Base Styles for Input Groups */
+.floating-search-container,
+.floating-Category-container,
+.floating-Location-container,
+.floating-Resetbtn-container {
+  flex: 1 1 250px;
+  position: relative;
+      /* border: 2px blanchedalmond solid; */
+height: 30px;
+
+}
+
+/* Input Fields and Select */
+.floating-search-input,
+.floating-filter-input,
+.floating-filter-select {
+  width: 100%;
+  padding: 1.1rem 1rem 0.9rem;
+  background: transparent;
+  color: blanchedalmond;
+  font-size: 1rem;
+  /* border: 2px solid #00e0ff; */
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border 0.3s, background 0.3s;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.floating-filter-select {
+  appearance: none;
+  padding-right: 2.5rem;
+  color: blanchedalmond;
+  background-color: #1e293b !important;
+}
+
+/* Floating Labels */
+.floating-search-label{
+    /* border: 5px red solid; */
+  position: absolute;
+  top: 10px!important;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: blanchedalmond;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s;
+  background: transparent;
+  padding: 0 0.4rem;
+  border-radius: 0.25rem;
+  height: fit-content;
+  width: fit-content;
+}
+.floating-filter-label-Category{
+    /* border: 5px green solid; */
+  position: absolute;
+  bottom: 20px!important;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: blanchedalmond;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s;
+  background: transparent;
+  padding: 0 0.4rem;
+  border-radius: 0.25rem;
+  height: fit-content;
+  width: fit-content;
+}
+.floating-filter-label-Location {
+    /* border: 5px yellow solid; */
+  position: absolute;
+  top: 10px!important;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: blanchedalmond;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s;
+  background: transparent;
+  padding: 0 0.4rem;
+  border-radius: 0.25rem;
+  height: fit-content;
+  width: fit-content;
+}
+.floating-search-input:focus + .floating-search-label,
+.floating-search-input:not(:placeholder-shown) + .floating-search-label,
+.floating-filter-input:focus + .floating-filter-label-Location,
+.floating-filter-input:not(:placeholder-shown) + .floating-filter-label-Location,
+.floating-filter-select:focus + .floating-filter-label-Category,
+.floating-filter-select:not([value=""]) + .floating-filter-label-Category {
+  top: -0.6rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  background: #1e293b; /* to cover input border */
+  color: #ffdd57;
+  padding: 0 0.4rem;
+  transition: all 0.3s ease;
+}
+
+
+/* Icons */
+.search-icon,
+.category-icon,
+.location-icon,
+.reset-icon {
+  color: blanchedalmond;
+  margin-right: 0.4rem;
+  font-size: 1rem;
+}
+
+/* Dropdown Arrow */
+.floating-filter-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #8be9fd;
+}
+
+/* Reset Button */
+.floating-filter-button {
+  width: 180px;
+  height: fit-content;
+  padding: 0.85rem 1rem;
+  background-color: #1e293b !important;
+  color: #8be9fd !important;
+  border: 2px solid blanchedalmond;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  left: 430px;
+  bottom: 30px;
+}
+
+.floating-filter-button:hover {
+  background-color: #1e293b !important;
+  color: blanchedalmond !important;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 1.25rem 1.5rem;
+    clip-path: none;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .AddItembtn {
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .floating-search-container,
+  .floating-filter-container {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes neonPulse {
+  0% { opacity: 0.7; box-shadow: 0 0 10px 1px #3b82f6, 0 0 20px 2px rgba(59, 130, 246, 0.5); }
+  100% { opacity: 1; box-shadow: 0 0 15px 2px #3b82f6, 0 0 30px 4px rgba(59, 130, 246, 0.7); }
+}
+
+@keyframes holographicSweep {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+/* Status Tabs */
+/* Container */
+.status-tabs {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Base tab style */
+.status-tabs .nav-link {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 500;
+  text-align: center;
+  background-color: transparent;
+  color: blanchedalmond;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Specific tab styles */
+.tab-all-link,
+.tab-lost-link,
+.tab-found-link {
+  color: blanchedalmond;
+  border-color: transparent;
+}
+
+/* Active tab */
+.status-tabs .nav-link.active {
+  border-color: blanchedalmond !important;
+  background: linear-gradient(135deg, rgba(255, 235, 205, 0.15), rgba(255, 235, 205, 0.05));
+  color: blanchedalmond !important;
+  font-weight: 700;
+  transform: scale(1.08);
+}
+
+/* Hover effect */
+.tab-all-link:hover,
+.tab-lost-link:hover,
+.tab-found-link:hover {
+  background: rgba(255, 235, 205, 0.1);
+  color: blanchedalmond !important;
+  border-color: rgba(255, 235, 205, 0.3);
+}
+
+/* Focus for accessibility */
+.status-tabs .nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 235, 205, 0.4);
+}
+
+/* Items Display */
+/* -------------------------------------------
+   General Styles for Items Display
+-------------------------------------------- */
+
+/* Loading State */
+.text-center.py-5 {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+  border-width: 0.4rem;
+}
+
+.mt-2 {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+/* Alerts */
+.alert {
+  font-size: 1.1rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.alert-danger {
+  background-color: var(--danger-light);
+  border: 1px solid var(--danger);
+}
+
+.alert-info {
+  background-color: var(--info-light);
+  border: 1px solid var(--info);
+}
+
+/* Cards */
+
+.items-list .card {
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  height: 460px;
+  background: linear-gradient(145deg, #f0f4f8, #dfe6eb);
+    /* border: 10px red solid; */
+    width: auto;
+
+}
+
+.items-list .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 25px;
+  background-color: transparent;
+  border-radius: 12px;
+    /* border: 10px blueviolet solid; */
+    width: 408px;
+    height: 260px;
+    gap: 20px;
+    position: relative;
+    top: 30px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+    /* border: 2px blue solid; */
+    position: relative;
+    left: 30px;
+    width: fit-content;
+
+}
+
+.card-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  /* border: 2px chartreuse solid; */
+  position: relative;
+  left: 30px;
+  bottom: 10px;
+  width: 400px;
+  max-width: 350px;
+  text-align: justify;
+  max-height: 100px;
+  height: 100px; /* Fix the height */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Adds ellipsis (…) for long text */
+  display: -webkit-box; /* For multi-line truncation */
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  -webkit-box-orient: vertical; /* Vertical box layout */
+  line-clamp: 4; /* Standard property for line clamping */
+}
+.card-footer {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  border-top: 2px solid #e1e1e1;
+  position: relative;
+  bottom: 5px;
+    border-radius: 55px;
+}
+
+.card-footer small {
+  font-size: 0.9rem;
+  /* border: 1px green solid; */
+   position: relative;
+  left: 30px;
+    border-radius: 35px;
+
+}
+
+.item-card-img-top {
+  height: 200px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+    /* border: 10px greenyellow solid; */
+    position: relative;
+    left: 30px;
+    top: 20px;
+
+}
+
+/* Badge Styles */
+/* Badge Container Styles */
+.d-flex {
+  display: flex;
+  gap: 12px; /* Adds space between badges */
+  margin-bottom: 1rem;
+}
+
+/* Custom Badge Styles */
+.bgsecondary {
+  background-color: transparent !important; /* Grey color for secondary badge */
+  color: #1e293b !important;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  /* border: 2px red solid; */
+  position: relative;
+  bottom: 80px;
+  left: 10px;
+
+
+}
+
+.bginfo {
+  background-color: transparent !important; /* Info blue color */
+  color: #1e293b !important;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+    /* border: 2px red solid; */
+  position: relative;
+  bottom: 80px;
+  left: 10px;
+
+}
+
+/* Additional Styles */
+.badge {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;  
+}
+
+.d-flex .badge {
+  flex-shrink: 0; /* Prevent badges from shrinking */
+  background-color: transparent;
+  /* border: 10px yellow solid; */
+  position: relative;
+  bottom: 40px;
+}
+
+
+/* Button Styles */
+.card-buttons button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 1rem;
+    /* border: 10px brown solid; */
+  position: relative;
+    left: 30px;
+    bottom: 50px;
+    width: 70px;
+}
+
+.card-buttons button:hover {
+  transform: scale(1.05);
+}
+/* Edit Button Styles */
+.EditItemCardbtn {
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border: none;
+}
+
+.EditItemCardbtn:hover {
+  background-color: #0056b3; /* Darken on hover */
+  border-color: #0056b3;
+}
+
+.EditItemCardbtn .fa-edit {
+  margin-right: 8px;
+}
+
+/* View Comments Button Styles */
+.ViewCommentsCardbtn {
+  background-color: #17a2b8; /* Info color */
+  color: white;
+  border: none;
+}
+
+.ViewCommentsCardbtn:hover {
+  background-color: #138496; /* Darken on hover */
+  border-color: #138496;
+}
+
+.ViewCommentsCardbtn .fa-comments {
+  margin-right: 8px;
+}
+
+.ViewCommentsCardbtn .badge {
+  background-color: #f8f9fa;
+  color: #343a40; /* Dark text for the badge */
+  font-size: 0.9rem;
+  padding: 0.2rem 0.6rem;
+  margin-left: 5px;
+}
+
+/* Delete Button Styles */
+.DeleteItemCardbtn {
+  background-color: #dc3545; /* Danger color */
+  color: white;
+  border: none;
+}
+
+.DeleteItemCardbtn:hover {
+  background-color: #c82333; /* Darken on hover */
+  border-color: #c82333;
+}
+
+.DeleteItemCardbtn .fa-trash {
+  margin-right: 8px;
+}
+
+/* Tooltip Styles (optional) */
+.tooltip-inner {
+  font-size: 0.875rem;
+  padding: 0.6rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Lost / Found Button */
+.Cardbtn {
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 10px;
+  width: 100px!important;
+}
+
+.Cardbtn.danger {
+  background-color: #f44336!important;
+  color: white;
+    width: 300px!important;
+
+}
+
+.Cardbtn.success {
+  background-color: #4caf50!important;
+  color: white;
+  width: 300px!important;
+}
+
+.Cardbtn:hover {
+  background-color: darken(#4caf50, 10%);
+  border-color: darken(#4caf50, 10%);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.empty-state h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.empty-state .btn {
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+.empty-state .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.empty-state .btn-primary:hover {
+  background-color: darken(#007bff, 10%);
+  border-color: darken(#007bff, 10%);
+}
+
+/* Tooltip Styles */
+.tooltip-inner {
+  font-size: 0.875rem;
+  padding: 0.6rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* -------------------------------------------
+   Responsive Styles
+-------------------------------------------- */
+
+/* For larger screens, adjust grid */
+@media (min-width: 992px) {
+  .items-list .card {
+    margin: 0 1.5rem 2rem 1.5rem;
+  }
+}
+
+/* For smaller devices (mobile), adjust text sizes and layout */
+@media (max-width: 767px) {
+  .items-list .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .empty-state h3 {
+    font-size: 1.8rem;
+  }
+
+  .empty-state p {
+    font-size: 1rem;
+  }
+
+  .empty-state .btn {
+    font-size: 1rem;
+    padding: 8px 18px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+

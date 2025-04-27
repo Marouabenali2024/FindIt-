@@ -2,11 +2,12 @@
   "name": "findit",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm-run-all --parallel start:**",
-    "start:client": "cd client && npm run dev",
+    "start": "node server/server.js",
+    "build": "cd client && npm install && npm run build",
+    "start:client": "cd client && npm start",
     "start:server": "cd server && npm start",
     "prettier": "prettier --check 'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write  'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier --write 'client/**/*.{js,jsx,ts,tsx}' 'server/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

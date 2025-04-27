@@ -1,17 +1,33 @@
-import React from 'react';
 import NavBar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { Button, Container, Row, Col, Card, Image } from 'react-bootstrap'; // Import React Bootstrap components
+import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './Home.css';
 
 function Home() {
+  const [latestItems, setLatestItems] = useState([]);
+
+  // Fetch latest items from the API when the component mounts
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/api/items/latest') // Update with the correct URL
+      .then((response) => {
+        setLatestItems(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching latest items:', error);
+      });
+  }, []); // The dependency array should be here
+
   return (
     <Container className="container">
       <NavBar />
       <main className="hero-section">
         <Row className="align-items-center">
           <Col md={6} className="hero-left">
-            <h2 className="headline">LWelcome to FindIt !</h2>
+            <h2 className="headline">Welcome to FindIt !</h2>
             <p className="description">
               FindIt is your go-to platform to connect with people who have lost
               and found items. With a user-friendly experience, you can report
@@ -19,12 +35,19 @@ function Home() {
               precious belongings.
             </p>
             <div className="action-buttons">
-              <Button variant="danger" className="action-button lost-btn">
-              Lost Item
-              </Button>
-              <Button variant="success" className="action-button found-btn">
-                Found Item
-              </Button>
+              {/* Link to show only Lost Items */}
+              <Link to="/ItemsList?status=lost">
+                <Button variant="danger" className="action-button lost-btn">
+                  Lost Item
+                </Button>
+              </Link>
+
+              {/* Link to show only Found Items */}
+              <Link to="/ItemsList?status=found">
+                <Button variant="success" className="action-button found-btn">
+                  Found Item
+                </Button>
+              </Link>
             </div>
           </Col>
 
@@ -66,64 +89,34 @@ function Home() {
         </p>
       </section>
 
-      {/* Latest Lost & Found Items Section */}
       <section className="latest-items-section">
         <h2 className="section-title">Latest Lost and Found Items</h2>
         <Row className="latest-items">
-          <Col md={4}>
-            <Card className="item-card">
-              <Image
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSG8NYZKLgejTmbPKBYFdc6mhs_LIp_aHzjQ&s"
-                alt="A set of lost keys"
-                className="item-image"
-                fluid
-              />
-              <Card.Body>
-                <Card.Title className="item-title">
-                  Lost Keys - Jan 15, 2025
-                </Card.Title>
-                <Button className="item-action-btn" variant="primary">
-                  View Details
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card className="item-card">
-              <Image
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSqOoPNXSVXrO4-zg0Su-qBBjGFwErcjGcWA&s"
-                alt="A lost wallet"
-                className="item-image"
-                fluid
-              />
-              <Card.Body>
-                <Card.Title className="item-title">
-                  Lost Wallet - Jan 14, 2025
-                </Card.Title>
-                <Button className="item-action-btn" variant="primary">
-                  View Details
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card className="item-card">
-              <Image
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHEJfeUv6Qv0R7yGYH2RO-9oXX3SlQtO8kTQ&s"
-                alt="A lost phone"
-                className="item-image"
-                fluid
-              />
-              <Card.Body>
-                <Card.Title className="item-title">
-                  Lost Phone - Jan 13, 2025
-                </Card.Title>
-                <Button className="item-action-btn" variant="primary">
-                  View Details
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
+          {latestItems.length === 0 ? (
+            <p>No items found</p>
+          ) : (
+            latestItems.map((item) => (
+              <Col key={item._id} md={4}>
+                <Card className="item-card">
+                  <Image
+                    src={item.imageUrl || 'default-image-url'}
+                    alt={item.title}
+                    className="item-image"
+                    fluid
+                  />
+                  <Card.Body>
+                    <Card.Title className="item-title">
+                      {item.title} -{' '}
+                      {new Date(item.createdAt).toLocaleDateString()}
+                    </Card.Title>
+                    <Button className="item-action-btn" variant="primary">
+                      View Details
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))
+          )}
         </Row>
       </section>
 

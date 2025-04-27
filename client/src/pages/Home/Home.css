@@ -1,13 +1,15 @@
 /* Container */
 .container {
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
-  max-width: 100%;
-         position: relative;
-  top: 300px;
-    left: 0px;
-    width: 1400px!important;
-height: 1300px!important;
+  max-width: 1400px;
+  width: 100%;
+  height: auto;
+  min-height: 1500px;
+  /* border: 10px solid red; */
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /* Hero Section */
@@ -74,7 +76,7 @@ height: 40px!important;
 }
 
 .found-btn {
-  background-color: #2ecc71;
+  background-color: #38FF92;
   border: none;
   color: white;
 }

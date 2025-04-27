@@ -2,112 +2,70 @@ import bcrypt from 'bcryptjs';
 import User from '../../models/User.js';
 import VerifyUserEmail from '../../lib/VerifyUserEmail.js';
 import dotenv from 'dotenv';
+import Joi from 'joi';
 
 dotenv.config();
 
 export const registerUser = async (req, res) => {
   try {
-    let {
+    const schema = Joi.object({
+      fullName: Joi.string().trim().min(3).max(50).required(),
+      email: Joi.string().trim().lowercase().email().required(),
+      password: Joi.string()
+        .min(8)
+        .pattern(
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&+])[A-Za-z\d@$!%*?&+]{8,}$/
+        )
+        .required()
+        .messages({
+          'string.pattern.base':
+            'Password must have at least one uppercase, lowercase, number, and special character.',
+        }),
+      address: Joi.string().trim().min(5).max(100).required(),
+      phone: Joi.string()
+        .pattern(/^[0-9]{8,15}$/)
+        .required()
+        .messages({
+          'string.pattern.base': 'Invalid phone number format.',
+        }),
+    });
+
+    const { fullName, email, password, address, phone } = req.body;
+    const { error } = schema.validate({
       fullName,
       email,
       password,
-      confirmEmail,
-      confirmPassword,
       address,
       phone,
-    } = req.body;
-
-    // ✅ Check if all fields are provided
-    if (
-      !fullName ||
-      !email ||
-      !confirmEmail ||
-      !password ||
-      !confirmPassword ||
-      !address ||
-      !phone
-    ) {
-      return res
-        .status(400)
-        .json({ status: false, error: 'All fields are required.' });
+    });
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
     }
 
-    // ✅ Validate email format
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-      return res
-        .status(400)
-        .json({ status: false, error: 'Invalid email format.' });
-    }
-
-    // ✅ Check if email matches confirmation email
-    if (email !== confirmEmail) {
-      return res
-        .status(400)
-        .json({ status: false, error: 'Emails do not match.' });
-    }
-
-    // ✅ Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res
-        .status(400)
-        .json({ status: false, error: 'Email is already registered.' });
+      return res.status(400).json({ error: 'Email is already registered.' });
     }
 
-    // ✅ Validate password complexity
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&+])[A-Za-z\d@$!%*?&+]{8,}$/;
-    if (!passwordRegex.test(password)) {
-      return res.status(400).json({
-        status: false,
-        error:
-          'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
-      });
-    }
-
-    // ✅ Check if password matches confirmation password
-    if (password !== confirmPassword) {
-      return res
-        .status(400)
-        .json({ status: false, error: 'Passwords do not match.' });
-    }
-
-    // ✅ Hash password before saving
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    // ✅ Create new user
-    const newUser = new User({
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await new User({
       fullName,
       email,
       password: hashedPassword,
       address,
       phone,
-    });
+    }).save();
 
-    await newUser.save();
+    await VerifyUserEmail(fullName, email, newUser._id);
 
-    // ✅ Send verification email
-    await VerifyUserEmail(fullName, email); // Call with full name and email
-
-    // ✅ Send success response
     return res.status(201).json({
-      status: true,
       message: 'User registered successfully!',
-      user: {
-        fullName,
-        email,
-        address,
-        phone,
-      },
+      user: { fullName, email },
     });
   } catch (error) {
-    console.error('Error in user registration:', error);
-    return res.status(500).json({
-      status: false,
-      error: 'Internal server error. Please try again later.',
-    });
+    console.error('Registration error:', error.message);
+    return res
+      .status(500)
+      .json({ error: 'Internal server error. Please try again later.' });
   }
 };
-

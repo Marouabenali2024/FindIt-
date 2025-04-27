@@ -1,59 +1,68 @@
 import mongoose from 'mongoose';
+import validator from 'validator';
 
-const commentSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  comment: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+const itemSchema = new mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+      minlength: 3,
+      maxlength: 100,
+    },
+    img: {
+      type: String,
+      validate: {
+        validator: function (value) {
+          return !value || validator.isURL(value);
+        },
+        message: (props) => `The value ${props.value} is not a valid URL!`,
+      },
+    },
+    description: {
+      type: String,
+      required: true,
+      maxlength: 500,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
 
-const itemsSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  img: {
-    type: String,
-    default:
-      'https://res.cloudinary.com/your-cloud-name/image/upload/v1/default-image.png',
-  },
-  description: {
-    type: String,
-    default: 'No description',
-  },
-  category: {
-    type: String,
-    default: 'General',
-  },
-  location: {
-    type: String,
-    default: 'No location',
-  },
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  comments: [commentSchema],
-  isFound: {
-    type: Boolean,
-    default: false,
-  },
-  isLost: {
-    type: Boolean,
-    default: false,
-  },
-});
+    // 🗨️ Array of comments
+    comments: [
+      {
+        userId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'User',
+          required: true,
+        },
+        userName: { type: String, required: true }, // Ensure this is in the schema
+        comment: { type: String, required: true },
+        createdAt: { type: Date, default: Date.now },
+      },
+    ],
 
-const Item = mongoose.model('Item', itemsSchema);
+    isFound: {
+      type: Boolean,
+      default: false,
+    },
+    isLost: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { timestamps: true } // Adds createdAt and updatedAt to main item
+);
+
+const Item = mongoose.model('Item', itemSchema);
 
 export default Item;

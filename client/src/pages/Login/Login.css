@@ -1,203 +1,197 @@
-/* General Styling */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #00495c;
+/* General Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8f8f2;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: blanchedalmond;
+  min-height: 200vh;
+}
+
+/* Wrapper for Image + Login */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 41, 59, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+  width: 95%;
+  overflow: hidden;
+  /* border: 8px solid #03a6a6; */
+  margin: 50px auto;
+  position: relative;
+  bottom: 400px;
+}
+
+/* Image Side */
+.login-image {
+  flex: 1;
+  height: 100%;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.login-image:hover img {
+  transform: scale(1.08);
 }
 
 /* Login Container */
 .login-container {
-  background-color: #1e293b; 
-  width: 100%;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  flex: 1;
+  padding: 40px;
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin: 50px auto;
-        width: 440px!important;
-             position: relative;
-  bottom: 40px;
-  left: 30px;
-
+  background-color: #1e293b !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 340px;
 }
 
 .login-container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Title */
 .login-title {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 700;
   color: blanchedalmond;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-transform: uppercase;
-      background-color: #1e293b!important;
-
+  border-bottom: 2px solid blanchedalmond;
+  display: inline-block;
+  padding: 5px 0;
 }
 
-/* Input Group */
-.input-group {
-  margin-bottom: 15px;
+/* Role Toggle Styling */
+.role-toggle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+.role-toggle label {
+  font-size: 15px;
+  cursor: pointer;
+  color: #f8f8f2;
+}
+
+.role-toggle input {
+  margin-right: 8px;
+}
+
+/* Input Groups */
+.input-groupEmail,
+.input-groupPassword {
+  margin-bottom: 20px;
   text-align: left;
-      background-color: #1e293b!important;
-  position: relative;
-      bottom: 140px;
-            height: 60px!important;
-              color: gray;
-
-
 }
 
-.input-group label {
+.input-groupEmail label,
+.input-groupPassword label {
   display: block;
-  justify-content: center;
   font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
   color: blanchedalmond;
-    background-color: #1e293b!important;
-            height: 20px!important;
-              width: 90px!important;
- position: relative;
-      top: 5px!important;          
+  margin-bottom: 5px;
+   position: relative;
+   left: 30px;
 }
 
-.input-group input {
-  width: 250px!important;
+.input-groupEmail input,
+.input-groupPassword input {
+  width: 87%;
   padding: 12px;
-  font-size: 16px;
-  border-radius: 5px;
+  border: 2px solid #4a5568;
+  border-radius: 8px;
+  background-color:#F2BC79;
+  color: #03a6a6;
+  font-size: 15px;
   outline: none;
-  transition: all 0.3s ease-in-out;
-  background-color: #1e293b;
-  color: gray;
-  height: 20px!important;
- position: relative;
-      top: 20px;
+  transition: all 0.3s ease;
+     position: relative;
+   left: 30px;
 }
 
-.input-group input::placeholder {
-  color: gray;
-}
-
-.input-group input:focus {
+.input-groupEmail input:focus,
+.input-groupPassword input:focus {
   border-color: #03a6a6;
-  box-shadow: 0 0 10px rgba(3, 166, 166, 0.5);
-  outline: none;
-    color: gray;
-
+  box-shadow: 0 0 12px rgba(3, 166, 166, 0.6);
 }
 
 /* Login Button */
 .login-btn {
-padding: 12px;
-font-size: 16px;
-font-weight: bold;
-background-color: #f29c50;
-color: #1e293b;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: all 0.3s ease-in-out;
-text-transform: uppercase;
-width: 160px!important;
- position: relative;
-left: 5px;
+  width: 30%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #BF9169, #F2BF80);
+  border: none;
+  border-radius: 8px;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .login-btn:hover {
-  background-color: #05EDED;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(94, 53, 177, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(3, 166, 166, 0.5);
 }
 
 .login-btn:active {
-  background-color: #05EDED;
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* Forgot Password */
-.forgot-password {
+/* Feedback Messages */
+.error-msg,
+.success-msg {
   font-size: 14px;
-  margin-top: 10px;
-    background-color: #1e293b; 
-    display: flex;
-justify-content: center;
-gap: 10px;
+  margin: 10px 0;
+  font-weight: 600;
 }
 
-.forgot-password a {
-  color: #ffeb3b;
-  text-decoration: none;
-  font-weight: bold;
-    background-color: #1e293b; 
-
+.error-msg {
+  color: #f44336;
 }
 
-.forgot-password a:hover {
-  color:#05EDED;
-;
+.success-msg {
+  color: #4caf50;
 }
 
 /* Responsive Design */
-@media (max-width: 500px) {
-  .login-container {
-    width: 90%;
-    padding: 20px;
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+    height: auto;
+    border: none;
+    border-radius: 15px;
   }
-}
 
-/* Accessibility Enhancements */
-input:focus,
-button:focus {
-  outline: 2px solid #03a6a6; /* High contrast focus for better accessibility */
-  outline-offset: 4px;
-    background-color: #1e293b; 
+  .login-image,
+  .login-container {
+    width: 100%;
+  }
 
-}
+  .login-image {
+    height: 200px;
+  }
 
-input,
-button {
-  transition: transform 0.3s ease-in-out;
-}
-
-input:active,
-button:active {
-  transform: scale(0.98);
-}
-
-.lost-found-container {
-  text-align: center;
-  margin-top: 20px;
-    position: relative;
-  bottom: 30px;
-  left: 340px;
-  border: 10px red solid;
-
-}
-
-.lost-found-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  height: 400px;
-  width: 600px;
-  display: flex;
-  filter: contrast(70%);
-    position: relative;
-  top: 40px;
-  left: 640px;
-  bottom: 280px;
-    border: 10px green solid;
-
-
+  .login-title {
+    font-size: 24px;
+  }
 }
